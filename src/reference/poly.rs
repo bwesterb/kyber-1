@@ -90,8 +90,8 @@ pub fn poly_decompress(r: &mut Poly, a: &[u8])
     128 => {
       let mut idx = 0usize;
       for i in 0..KYBER_N/2 {
-        r.coeffs[2*i+0] = ((((a[idx] & 15) as usize * KYBER_Q) + 8) >> 4) as i16;
-        r.coeffs[2*i+1] = ((((a[idx] >> 4) as usize * KYBER_Q) + 8) >> 4) as i16;
+        r.coeffs[2*i+0] = ((((a[idx] & 15) as u32 * KYBER_Q) + 8) >> 4) as i16;
+        r.coeffs[2*i+1] = ((((a[idx] >> 4) as u32 * KYBER_Q) + 8) >> 4) as i16;
         idx += 1;
       }
     },

@@ -1,4 +1,4 @@
-import * as kyber from "pqc_kyber";
+import * as kyber from "safe_pqc_kyber";
 
 const generateKeyButton = document.getElementById("generatekey");
 const encapButton = document.getElementById("encapsulate");

@@ -9,8 +9,8 @@
 [![Build Status](https://github.com/Argyle-Software/kyber/actions/workflows/kat.yml/badge.svg)](https://github.com/Argyle-Software/kyber/actions)
 [![Crates](https://img.shields.io/crates/v/pqc-kyber)](https://crates.io/crates/pqc-kyber)
 [![NPM](https://img.shields.io/npm/v/pqc-kyber?color=yellow)](https://www.npmjs.com/package/pqc-kyber)
-[![License](https://img.shields.io/crates/l/pqc_kyber)](https://github.com/Argyle-Software/kyber/blob/master/LICENSE-MIT)
-[![dependency status](https://deps.rs/crate/pqc_kyber/0.6.0/status.svg)](https://deps.rs/crate/pqc_kyber/0.6.0)
+[![License](https://img.shields.io/crates/l/safe_pqc_kyber)](https://github.com/Argyle-Software/kyber/blob/master/LICENSE-MIT)
+[![dependency status](https://deps.rs/crate/safe_pqc_kyber/0.6.0/status.svg)](https://deps.rs/crate/safe_pqc_kyber/0.6.0)
 
 A rust implementation of the Kyber algorithm, a KEM standardised by the NIST Post-Quantum Standardization Project.
 
@@ -34,13 +34,13 @@ Please also read the [**security considerations**](#security-considerations) bef
 ## Installation
 
 ```shell
-cargo add pqc_kyber
+cargo add safe_pqc_kyber
 ```
 
 ## Usage 
 
 ```rust
-use pqc_kyber::*;
+use safe_pqc_kyber::*;
 ```
 
 For optimisations on x86 platforms enable the `avx2` feature and the following RUSTFLAGS:
@@ -134,7 +134,7 @@ If no security level is specified then kyber768 is used by default as recommende
 
 ```toml
 [dependencies]
-pqc_kyber = {version = "0.6.0", features = ["kyber512", "90s", "avx2"]}
+safe_pqc_kyber = {version = "0.6.0", features = ["kyber512", "90s", "avx2"]}
 ```
 
 

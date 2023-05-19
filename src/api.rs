@@ -10,7 +10,7 @@ use crate::{
 /// 
 /// ### Example
 /// ```
-/// # use pqc_kyber::*;
+/// # use safe_pqc_kyber::*;
 /// # fn main() -> Result<(), KyberError> {
 /// let mut rng = rand::thread_rng();
 /// let keys = keypair(&mut rng);
@@ -30,7 +30,7 @@ pub fn keypair<R>(rng: &mut R) -> Keypair
 ///
 /// ### Example
 /// ```
-/// # use pqc_kyber::*; 
+/// # use safe_pqc_kyber::*; 
 /// # fn main() -> Result<(), KyberError> {
 /// let mut rng = rand::thread_rng();
 /// let keys = keypair(&mut rng);
@@ -54,7 +54,7 @@ pub fn encapsulate<R>(pk: &[u8], rng: &mut R) -> Encapsulated
 ///
 /// ### Example
 /// ```
-/// # use pqc_kyber::*;
+/// # use safe_pqc_kyber::*;
 /// # fn main() -> Result<(), KyberError> {
 /// let mut rng = rand::thread_rng();
 /// let keys = keypair(&mut rng);
@@ -85,7 +85,7 @@ pub struct Keypair {
 impl Keypair {
   /// Securely generates a new keypair`
   /// ```
-  /// # use pqc_kyber::*;
+  /// # use safe_pqc_kyber::*;
   /// # fn main() -> Result<(), KyberError> {
   /// let mut rng = rand::thread_rng();
   /// let keys = Keypair::generate(&mut rng);

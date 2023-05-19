@@ -1,5 +1,5 @@
 use honggfuzz::fuzz;
-use pqc_kyber::*;
+use safe_pqc_kyber::*;
 
 fn main() -> Result<(), KyberError> {
   let mut ss = [0u8; KYBER_SSBYTES];

@@ -32,12 +32,12 @@
 //! ```
 //! 
 //! ```
-//! use pqc_kyber::*;
+//! use safe_pqc_kyber::*;
 //! ```
 //! 
 //! ##### Key Encapsulation
 //! ```
-//! # use pqc_kyber::*;
+//! # use safe_pqc_kyber::*;
 //! # fn main() -> Result<(),KyberError> {
 //! # let mut rng = rand::thread_rng();
 //! // Generate Keypair
@@ -57,7 +57,7 @@
 //! 
 //! #### Unilaterally Authenticated Key Exchange
 //! ```
-//! # use pqc_kyber::*;
+//! # use safe_pqc_kyber::*;
 //! # fn main() -> Result<(),KyberError> {
 //! let mut rng = rand::thread_rng();
 //! 
@@ -89,7 +89,7 @@
 //! Follows the same workflow except Bob requires Alice's public key
 //! 
 //! ```
-//! # use pqc_kyber::*;
+//! # use safe_pqc_kyber::*;
 //! # fn main() -> Result<(),KyberError> {
 //! # let mut rng = rand::thread_rng();
 //! let mut alice = Ake::new();

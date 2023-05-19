@@ -1,4 +1,4 @@
-use pqc_kyber::*;
+use safe_pqc_kyber::*;
 
 // Kyber struct uake and ake functions
 #[test]

@@ -11,17 +11,17 @@
     "url": "https://github.com/Argyle-Software/kyber"
   },
   "files": [
-    "pqc_kyber_bg.wasm",
-    "pqc_kyber.js",
-    "pqc_kyber_bg.js",
-    "pqc_kyber.d.ts",
+    "safe_pqc_kyber_bg.wasm",
+    "safe_pqc_kyber.js",
+    "safe_pqc_kyber_bg.js",
+    "safe_pqc_kyber.d.ts",
     "LICENSE-MIT",
     "LICENSE-APACHE"
   ],
-  "module": "pqc_kyber.js",
-  "types": "pqc_kyber.d.ts",
+  "module": "safe_pqc_kyber.js",
+  "types": "safe_pqc_kyber.d.ts",
   "sideEffects": [
-    "./pqc_kyber.js",
+    "./safe_pqc_kyber.js",
     "./snippets/*"
   ],
   "keywords": [

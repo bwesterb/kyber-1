@@ -1,13 +1,13 @@
 [package]
-name = "pqc_kyber"
+name = "safe_pqc_kyber"
 version = "0.6.0"
-authors = ["Mitchell Berry <foss@mitchellberry.com>"]
+authors = ["Bas Westerbaan <bas@westerbaan.name>"]
 edition = "2018"
 license = "MIT/Apache-2.0"
-repository = "https://github.com/Argyle-Software/kyber"
-documentation = "https://docs.rs/crate/pqc_kyber/"
+repository = "https://github.com/bwesterb/argyle-kyber"
+documentation = "https://docs.rs/crate/safe_pqc_kyber/"
 categories = ["algorithms", "cryptography", "wasm", "no-std"]
-description = "A rust implementation of the post-quantum Kyber KEM algorithm"
+description = "Fork of pqc_kyber with some safety fixes"
 keywords = ["kyber", "kem", "key-exchange", "kex", "post-quantum"]
 readme = "readme.md"
 

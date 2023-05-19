@@ -43,7 +43,7 @@ type Eska = [u8; KYBER_SECRETKEYBYTES];
 /// Used for unilaterally authenticated key exchange between two parties.
 /// 
 /// ```
-/// # use pqc_kyber::*;
+/// # use safe_pqc_kyber::*;
 /// # fn main() -> Result<(),KyberError> {
 /// let mut rng = rand::thread_rng();
 /// 
@@ -87,7 +87,7 @@ impl Default for Uake {
 impl Uake {
   /// Builds new UAKE struct
   /// ```
-  /// # use pqc_kyber::Uake;
+  /// # use safe_pqc_kyber::Uake;
   /// let mut kex = Uake::new();
   /// ```
   pub fn new() -> Self {
@@ -96,7 +96,7 @@ impl Uake {
 
   /// Initiates a Unilaterally Authenticated Key Exchange.
   /// ``` 
-  /// # use pqc_kyber::*;
+  /// # use safe_pqc_kyber::*;
   /// # fn main() -> Result<(),KyberError> {
   /// let mut rng = rand::thread_rng();
   /// let mut alice = Uake::new();
@@ -117,7 +117,7 @@ impl Uake {
 
   /// Handles the output of a `client_init()` request
   /// ```
-  /// # use pqc_kyber::*;
+  /// # use safe_pqc_kyber::*;
   /// # fn main() -> Result<(),KyberError> {
   /// # let mut rng = rand::thread_rng();
   /// let mut alice = Uake::new();
@@ -142,7 +142,7 @@ impl Uake {
   /// Decapsulates and authenticates the shared secret from the output of 
   /// `server_receive()`
   /// ```
-  /// # use pqc_kyber::*;
+  /// # use safe_pqc_kyber::*;
   /// # fn main() -> Result<(),KyberError> {
   /// # let mut rng = rand::thread_rng();
   /// # let mut alice = Uake::new();
@@ -168,7 +168,7 @@ impl Uake {
 /// 
 /// # Example:
 /// ``` 
-/// # use pqc_kyber::*;
+/// # use safe_pqc_kyber::*;
 /// # fn main() -> Result<(),KyberError> {
 /// let mut rng = rand::thread_rng();
 /// 
@@ -214,7 +214,7 @@ impl Default for Ake {
 impl Ake {
   /// Builds a new AKE struct
   /// ```
-  /// # use pqc_kyber::Ake;
+  /// # use safe_pqc_kyber::Ake;
   /// let mut kex = Ake::new();
   /// ```
   pub fn new() -> Self {
@@ -223,7 +223,7 @@ impl Ake {
 
   /// Initiates a Mutually Authenticated Key Exchange.
   /// ``` 
-  /// # use pqc_kyber::*;
+  /// # use safe_pqc_kyber::*;
   /// # fn main() -> Result<(),KyberError> {
   /// let mut rng = rand::thread_rng();
   /// let mut alice = Ake::new();
@@ -244,7 +244,7 @@ impl Ake {
 
   /// Handles and authenticates the output of a `client_init()` request
   /// ```
-  /// # use pqc_kyber::*;
+  /// # use safe_pqc_kyber::*;
   /// # fn main() -> Result<(),KyberError> {
   /// # let mut rng = rand::thread_rng();
   /// let mut alice = Ake::new();
@@ -271,7 +271,7 @@ impl Ake {
   /// Decapsulates and authenticates the shared secret from the output of 
   /// `server_receive()`
   /// ```
-  /// # use pqc_kyber::*;
+  /// # use safe_pqc_kyber::*;
   /// # fn main() -> Result<(),KyberError> {
   /// # let mut rng = rand::thread_rng();
   /// # let mut alice = Ake::new();

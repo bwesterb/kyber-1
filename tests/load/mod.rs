@@ -1,7 +1,7 @@
 use std::fs::File;
 use std::path::PathBuf;
 use std::io::{prelude::*, BufReader};
-use pqc_kyber::{KYBER_K, KYBER_90S};
+use safe_pqc_kyber::{KYBER_K, KYBER_90S};
 
 // Known Answer Tests
 #[derive(Debug)]

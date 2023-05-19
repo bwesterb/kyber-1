@@ -2,7 +2,7 @@
 
 mod load;
 
-use pqc_kyber::*;
+use safe_pqc_kyber::*;
 use load::*;
 
 // Generate KAT keypairs from seeds.

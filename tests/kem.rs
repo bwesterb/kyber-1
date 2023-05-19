@@ -1,4 +1,4 @@
-use pqc_kyber::*;
+use safe_pqc_kyber::*;
 
 #[test]
 fn keypair_encap_decap() {

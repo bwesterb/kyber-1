@@ -24,7 +24,7 @@ fn main() {
         ) {
           linker.object(o);
         }
-        linker.compile("pqc_kyber");
+        linker.compile("safe_pqc_kyber");
       }
 
       #[cfg(not(feature = "nasm"))]
@@ -34,7 +34,7 @@ fn main() {
         cc::Build::new()
           .include(ROOT)
           .files(paths)
-          .compile("pqc_kyber");
+          .compile("safe_pqc_kyber");
       }
     }
   }

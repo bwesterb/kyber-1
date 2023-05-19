@@ -2,7 +2,7 @@
 
   <h1>Web Assembly Demo</h1>
 
-  <strong>A basic example of using the pqc_kyber npm module</strong> 
+  <strong>A basic example of using the safe_pqc_kyber npm module</strong> 
 
 
 
@@ -28,7 +28,7 @@ The demo is at [localhost:8080](localhost:8080)
 ### Library Usage
 
 ```js
-import * as kyber from "pqc_kyber";
+import * as kyber from "safe_pqc_kyber";
 
 // Generate Keypair
 let keys = kyber.keypair();

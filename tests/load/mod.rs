@@ -46,7 +46,7 @@ impl From<&[String]> for Kat {
   }
 }
 
-// Get KAT filename based on security level and if 90s mode
+// Get KAT filename based on security level
 fn get_filename() -> String {
   let mut filename = match KYBER_K {
     2 => "tvecs512".to_string(),
@@ -54,9 +54,6 @@ fn get_filename() -> String {
     4 => "tvecs1024".to_string(),
     _ => panic!("No security level set")
   };
-  if KYBER_90S {
-    filename.push_str("-90s");
-  }
   println!("Using KAT file: {}", &filename);
   filename
 }

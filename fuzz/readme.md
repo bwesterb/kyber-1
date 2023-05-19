@@ -28,7 +28,7 @@ cargo hfuzz run <TARGET>
 Run different security levels and modes:
 
 ```bash
-cargo hfuzz run <TARGET> --features "kyber512 90s"
+cargo hfuzz run <TARGET> --features "kyber512"
 ```
 
 Current targets are: 

@@ -14,14 +14,6 @@ pub const KYBER_K: usize = if cfg!(feature = "kyber512") {
     3
 };
 
-/// A boolean flag for whether 90's mode is activated.
-/// 
-/// If true AES-CTR and SHA2 will be used as cryptographic primitives instead, 
-/// which may have hardware speed-ups on certain platforms.
-/// 
-/// Defaults to false, set`features = ["90s"]` in Cargo.toml to enable. 
-pub const KYBER_90S: bool = cfg!(feature = "90s");
-
 pub(crate) const KYBER_N: usize = 256;
 pub(crate) const KYBER_Q: usize = 3329;
 

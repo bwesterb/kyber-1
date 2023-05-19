@@ -15,7 +15,7 @@ Don't be surprised to significant speedups and regressions.
 You will need to enable the benchmarking feature to run:
 
 ```bash
-cargo bench --features "benchmarking kyber1024 avx2"
+cargo bench --features "benchmarking kyber1024"
 ```
 This is a workaround for issues with address sanitizer checks in the test suite. 
 

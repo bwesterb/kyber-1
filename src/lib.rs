@@ -5,7 +5,6 @@
 //! This library:
 //! * Is no_std compatible and uses no allocations, suitable for embedded devices. 
 //! * The reference files contain no unsafe code.
-//! * On x86_64 platforms uses an optimized avx2 version by default.
 //! * Compiles to WASM using wasm-bindgen.
 //! 
 //! ## Features
@@ -16,20 +15,12 @@
 //! |-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 //! | kyber512  | Enables kyber512 mode, with a security level roughly equivalent to AES-128.                                                                                                |
 //! | kyber1024 | Enables kyber1024 mode, with a security level roughly equivalent to AES-256.                   |
-//! | 90s       | 90's mode uses SHA2 and AES-CTR as a replacement for SHAKE. This may provide hardware speedups on certain architectures.                                                           |
-//! | avx2      | On x86_64 platforms enable the optimized version. This flag is will cause a compile error on other architectures. |
 //! | wasm      | For compiling to WASM targets. |
-//! | nasm | Uses Netwide Assembler avx2 code instead of GAS for portability. Requires a nasm compiler: https://www.nasm.us/ | 
 //! | zeroize | This will zero out the key exchange structs on drop using the [zeroize](https://docs.rs/zeroize/latest/zeroize/) crate |
 //! | std | Enable the standard library |
 //! 
 //! ## Usage 
 //! 
-//! For optimisations on x86 platforms enable the `avx2` feature and the following RUSTFLAGS:
-//! 
-//! ```shell
-//! export RUSTFLAGS="-C target-feature=+aes,+avx2,+sse2,+sse4.1,+bmi2,+popcnt"
-//! ```
 //! 
 //! ```
 //! use safe_pqc_kyber::*;
@@ -126,19 +117,8 @@
 #[cfg(all(feature = "kyber1024", feature = "kyber512"))]
 compile_error!("Only one security level can be specified");
 
-#[cfg(all(target_arch = "x86_64", feature = "avx2"))] 
-mod avx2;
-#[cfg(all(target_arch = "x86_64", feature = "avx2"))] 
-use avx2::*;
-
-#[cfg(any(not(target_arch = "x86_64"), not(feature = "avx2")))] 
 mod reference;
-#[cfg(any(not(target_arch = "x86_64"), not(feature = "avx2")))] 
 use reference::*;
-
-#[cfg(any(not(target_arch = "x86_64"), not(feature = "avx2")))]
-#[cfg(feature = "hazmat")]
-pub use reference::indcpa;
 
 #[cfg(feature = "wasm")]
 mod wasm;

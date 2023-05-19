@@ -5,12 +5,7 @@ set -e
 #
 # Variables: 
 # KAT - Runs the known answer tests
-# AVX2 - Runs avx2 code on x86 platforms with compiled GAS files
-# NASM - Runs avx2 code with both GAS and NASM files seperately
 
-# When setting AVX2 or NASM flags enable avx2 target features 
-# and LLVM address sanitser checks (requires nightly):
-# export RUSTFLAGS="${RUSTFLAGS:-} -Z sanitizer=address -C target-cpu=native -C target-feature=+aes,+avx2,+sse2,+sse4.1,+bmi2,+popcnt"
 
 TARGET=$(rustc -vV | sed -n 's|host: ||p')
 
@@ -23,21 +18,6 @@ if [ -z "$KAT" ]
   else
   echo Running Known Answer Tests
     RUSTFLAGS+=" --cfg kyber_kat"
-fi
-
-if [ -z "$AVX2" ]
-  then
-    echo Not using AVX2 optimisations 
-    OPT=("")
-  else
-    echo Using AVX2 optimisations with GAS assembler
-    OPT=("" "avx2")
-fi
-
-if [[ ! -z "$NASM" ]]
-  then
-    echo Using AVX2 optimisations with NASM assembler
-    OPT+=("nasm")
 fi
 
 # Print Headers
@@ -54,7 +34,7 @@ start=`date +%s`
 announce $TARGET
 
 LEVELS=("kyber512" "kyber768" "kyber1024")
-NINES=("" "90s" "90s-fixslice")
+NINES=("")
 
 for level in "${LEVELS[@]}"; do
   for nine in "${NINES[@]}"; do

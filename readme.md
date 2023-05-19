@@ -17,7 +17,6 @@ A rust implementation of the Kyber algorithm, a KEM standardised by the NIST Pos
 This library:
 * Is no_std compatible and needs no allocator, suitable for embedded devices. 
 * Reference files contain no unsafe code and are written in pure rust.
-* On x86_64 platforms offers an avx2 optimized version, which includes assembly from the C reference repo. 
 * Compiles to WASM using wasm-bindgen and has a ready-to-use binary published on NPM.
 
 
@@ -41,12 +40,6 @@ cargo add safe_pqc_kyber
 
 ```rust
 use safe_pqc_kyber::*;
-```
-
-For optimisations on x86 platforms enable the `avx2` feature and the following RUSTFLAGS:
-
-```shell
-export RUSTFLAGS="-C target-feature=+aes,+avx2,+sse2,+sse4.1,+bmi2,+popcnt"
 ```
 
 ---
@@ -134,7 +127,7 @@ If no security level is specified then kyber768 is used by default as recommende
 
 ```toml
 [dependencies]
-safe_pqc_kyber = {version = "0.6.0", features = ["kyber512", "90s", "avx2"]}
+safe_pqc_kyber = {version = "0.6.0", features = ["kyber512"]}
 ```
 
 
@@ -143,11 +136,7 @@ safe_pqc_kyber = {version = "0.6.0", features = ["kyber512", "90s", "avx2"]}
 | std | Enable the standard library |
 | kyber512  | Enables kyber512 mode, with a security level roughly equivalent to AES-128.|
 | kyber1024 | Enables kyber1024 mode, with a security level roughly equivalent to AES-256.  A compile-time error is raised if more than one security level is specified.|
-| 90s | Uses AES256 in counter mode and SHA2 as a replacement for SHAKE. This can provide hardware speedups in some cases.|
-| 90s-fixslice | Uses a fixslice implementation of AES256 by RustCrypto, this provides greater side-channel attack resistance, especially on embedded platforms |
-| avx2 | On x86_64 platforms enable the optimized version. This flag is will cause a compile error on other architectures. |
 | wasm | For compiling to WASM targets|
-| nasm | Uses Netwide Assembler avx2 code instead of GAS for portability. Requires a nasm compiler: https://www.nasm.us/ | 
 | zeroize | This will zero out the key exchange structs on drop using the [zeroize](https://docs.rs/zeroize/latest/zeroize/) crate |
 | benchmarking |  Enables the criterion benchmarking suite |
 ---
@@ -164,9 +153,6 @@ There's a helper script to do this [here](./tests/KAT/build_kats.sh).
 ```bash
 # This example runs the basic tests for kyber768
 cargo test
-
-# This runs the KATs for kyber512 in 90's mode
-RUSTFLAGS='--cfg kyber_kat' cargo test --features "kyber512 90s"
 ```
 
 See the [testing readme](./tests/readme.md) for more comprehensive info.

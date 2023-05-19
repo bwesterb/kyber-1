@@ -5,11 +5,8 @@ The test vectors need to be generated locally. Running [build_kats.sh](./build_k
 This results in 6 files, each containing 10000 KATs, total size is ~600MB:
 
 * tvecs512
-* tvecs512-90s
 * tvecs768
-* tvecs768-90s
 * tvecs1024
-* tvecs1024-90s
 
 These need to be then moved into the `tests/KAT` folder. The `SHA256SUMS_ORIG` file contains 
 the digests this library was tested against.

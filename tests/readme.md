@@ -9,12 +9,6 @@ cd KAT
 
 Which will clone the C reference repo, generate the KAT files, then rename and put them in the correct folder for testing.
 
-To run the known answer tests you will need to enable `kyber_kat` in `RUSTFLAGS`. To check different Kyber levels or 90's mode you will need to include those flags also. eg:
-```bash
-RUSTFLAGS=' --cfg kyber_kat' cargo test --features "kyber1024 90s"
-```
-
-For applicible x86 architectures you must export the avx2 RUSTFLAGS if you don't want to test on the reference codebase.
 
 To run a matrix of all possible features use the helper script from this folder:
 ```shell
@@ -25,13 +19,11 @@ The script also checks for the existence of different environment variables and 
 its behaviour
 
 * KAT: Runs the known answer tests
-* AVX2: Runs avx2 code on x86 platforms with compiled GAS files
-* NASM: Runs avx2 code with both GAS and NASM files seperately, requires a NASM compiler installed
 
 To activate, instantiate the variables, for example:
 
 ```shell
-KAT=1 AVX2=1 NASM=1 ./run_all_tests.sh 
+KAT=1 ./run_all_tests.sh 
 ```
 
 Test files:

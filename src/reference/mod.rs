@@ -1,4 +1,3 @@
-pub mod aes256ctr;
 pub mod cbd;
 pub mod fips202;
 pub mod indcpa;

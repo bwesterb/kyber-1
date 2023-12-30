@@ -36,7 +36,10 @@ pub fn polyvec_compress(r: &mut[u8], a: Polyvec)
         for k in 0..8 {
           t[k]  = a.vec[i].coeffs[8*j+k] as u16;
           t[k] = t[k].wrapping_add((((t[k] as i16) >> 15) & KYBER_Q as i16) as u16);
-          t[k]  = (((((t[k] as u32) << 11) + KYBER_Q as u32/2)/KYBER_Q as u32) & 0x7ff ) as u16;
+          let mut tmp : u64 = ((t[k] as u32) << 11) + KYBER_Q as u32/2;
+          tmp *= 20642679;
+          tmp >>= 36;
+          t[k]  = (tmp as u16) & 0x7ff;
         }
         r[idx+0] =  (t[0] >>  0) as u8;
         r[idx+1] = ((t[0] >>  8) | (t[1] << 3)) as u8;
@@ -63,8 +66,10 @@ pub fn polyvec_compress(r: &mut[u8], a: Polyvec)
         for k in 0..4 {
           t[k]  = a.vec[i].coeffs[4*j+k] as u16;
           t[k] = t[k].wrapping_add((((t[k] as i16) >> 15) & KYBER_Q as i16) as u16);
-          t[k]  = 
-            (((((t[k] as u32) << 10) + KYBER_Q as u32/2)/ KYBER_Q as u32) & 0x3ff) as u16;
+          let mut tmp : u64 = (((t[k] as u32) << 10) + KYBER_Q as u32/2) as u64;
+          tmp *= 20642679;
+          tmp >>= 36;
+          t[k]  = (tmp as u16) & 0x3ff;
         }
         r[idx+0] =  (t[0] >> 0) as u8;
         r[idx+1] = ((t[0] >> 8) | (t[1] << 2)) as u8;

@@ -11,22 +11,20 @@ description = "Fork of pqc_kyber with some safety fixes"
 keywords = ["kyber", "kem", "key-exchange", "kex", "post-quantum"]
 readme = "readme.md"
 
+resolver = "2"
+
 [dependencies]
 rand_core = { version = "0.6.4",  default-features = false }
 wasm-bindgen = { version = "0.2.84", optional = true }
-getrandom = {version = "0.2.9", features = ["js"], optional = true }
 zeroize = { version = "1.6.0", features = ["derive"], optional = true }
-# Optional dev-deps, see https://github.com/rust-lang/cargo/issues/1596
+# wasm needs rand - TODO: remove
+rand = { version = "0.8", default-features = false, optional = true }
+getrandom = {version = "0.2.9", default-features = false, optional = true }
 criterion = { version = "0.4.0", features = ["html_reports"], optional = true } 
 
-[dependencies.rand]
-version = "0.8.5"
-default-features = false
-features = ["getrandom"]
-optional = true
-
 [dev-dependencies]
-rand = "0.8.5"
+rand = { version = "0.8", default-features = false, features = ["std", "std_rng", "getrandom"] }
+rand_core = { version = "0.6", default-features = false, features = ["getrandom"] }
 
 [build-dependencies]
 
@@ -38,6 +36,7 @@ name = "api"
 harness = false
 
 [features]
+default = []
 ### Security Levels ###
 # Defaults to "kyber768" if none selected
 # Will throw a compile-time error if more than one level is chosen
@@ -46,7 +45,7 @@ kyber768 = []
 kyber1024 = []
 
 # For compiling to wasm targets 
-wasm = ["wasm-bindgen", "getrandom", "rand"]
+wasm = ["wasm-bindgen", "rand/getrandom", "rand_core/getrandom", "getrandom/js"]
 
 # Enable std library support
 std = []

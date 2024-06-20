@@ -12,6 +12,8 @@
 [![License](https://img.shields.io/crates/l/safe_pqc_kyber)](https://github.com/Argyle-Software/kyber/blob/master/LICENSE-MIT)
 [![dependency status](https://deps.rs/crate/safe_pqc_kyber/0.6.0/status.svg)](https://deps.rs/crate/safe_pqc_kyber/0.6.0)
 
+**This is a conservative fork of [Argyle-Software's Kyber](https://github.com/Argyle-Software/kyber) crate.**
+
 A rust implementation of the Kyber algorithm, a KEM standardised by the NIST Post-Quantum Standardization Project.
 
 This library:

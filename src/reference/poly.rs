@@ -323,10 +323,21 @@ pub fn poly_sub(r: &mut Poly, a: &Poly)
 //              - const [u8] msg: input message (of length KYBER_SYMBYTES)
 pub fn poly_frommsg(r: &mut Poly, msg: &[u8])
 {
+  // Prevent compiler optimisation.
+  //
+  // For upstream see
+  //
+  // https://github.com/pq-crystals/kyber/commit/9b8d30698a3e7449aeb34e62339d4176f11e3c6c
+  //
+  // For method, see  https://github.com/dalek-cryptography/curve25519-dalek/pull/659
+  fn black_box(value: u16) -> u16 {
+    unsafe { core::ptr::read_volatile(&value) }
+  }
+
   let mut mask;
   for i in 0..KYBER_N/8 {
     for j in 0..8 {
-      mask = ((msg[i] as u16 >> j) & 1 ).wrapping_neg();
+      mask = black_box((msg[i] as u16 >> j) & 1 ).wrapping_neg();
       r.coeffs[8*i+j] = (mask & ((KYBER_Q+1)/2) as u16) as i16;
     }
   }

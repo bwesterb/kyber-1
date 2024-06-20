@@ -6,11 +6,11 @@
 
 
 # Kyber
-[![Build Status](https://github.com/Argyle-Software/kyber/actions/workflows/kat.yml/badge.svg)](https://github.com/Argyle-Software/kyber/actions)
-[![Crates](https://img.shields.io/crates/v/pqc-kyber)](https://crates.io/crates/pqc-kyber)
-[![NPM](https://img.shields.io/npm/v/pqc-kyber?color=yellow)](https://www.npmjs.com/package/pqc-kyber)
+[![Build Status](https://github.com/Argyle-Software/kyber/actions/workflows/kat.yml/badge.svg)](https://github.com/bwesterb/argyle-kyber/actions)
+[![Crates](https://img.shields.io/crates/v/safe_pqc_kyber)](https://crates.io/crates/safe_pqc_kyber)
+[![NPM](https://img.shields.io/npm/v/pqc-kyber?color=yellow)](https://www.npmjs.com/package/safe_pqc_kyber)
 [![License](https://img.shields.io/crates/l/safe_pqc_kyber)](https://github.com/Argyle-Software/kyber/blob/master/LICENSE-MIT)
-[![dependency status](https://deps.rs/crate/safe_pqc_kyber/0.6.0/status.svg)](https://deps.rs/crate/safe_pqc_kyber/0.6.0)
+[![dependency status](https://deps.rs/crate/safe_pqc_kyber/0.6.2/status.svg)](https://deps.rs/crate/safe_pqc_kyber/0.6.2)
 
 **This is a conservative fork of [Argyle-Software's Kyber](https://github.com/Argyle-Software/kyber) crate.**
 

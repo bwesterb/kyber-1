@@ -8,7 +8,6 @@
 # Kyber
 [![Build Status](https://github.com/Argyle-Software/kyber/actions/workflows/kat.yml/badge.svg)](https://github.com/bwesterb/argyle-kyber/actions)
 [![Crates](https://img.shields.io/crates/v/safe_pqc_kyber)](https://crates.io/crates/safe_pqc_kyber)
-[![NPM](https://img.shields.io/npm/v/pqc-kyber?color=yellow)](https://www.npmjs.com/package/safe_pqc_kyber)
 [![License](https://img.shields.io/crates/l/safe_pqc_kyber)](https://github.com/Argyle-Software/kyber/blob/master/LICENSE-MIT)
 [![dependency status](https://deps.rs/crate/safe_pqc_kyber/0.6.2/status.svg)](https://deps.rs/crate/safe_pqc_kyber/0.6.2)
 
@@ -174,45 +173,6 @@ See the [benchmarking readme](./benches/readme.md) for information on correct us
 ## Fuzzing
 
 The fuzzing suite uses honggfuzz, installation and instructions are on the [fuzzing](./fuzz/readme.md) page. 
-
----
-
-## WebAssembly
-
-This library has been compiled into web assembly and published as a npm package. Usage instructions are here:
-
-https://www.npmjs.com/package/pqc-kyber
-
-Which is also located here in the [wasm readme](./pkg/readme.md)
-
-To install:
-
-```shell
-npm i pqc-kyber
-```
-
-To compile the wasm files yourself you need to enable the `wasm` feature.
-
-For example, using [wasm-pack](https://rustwasm.github.io/wasm-pack/installer/):
-
-```shell
-wasm-pack build -- --features wasm
-```
-
-Which will export the wasm, javascript and  typescript files into [./pkg/](./pkg/readme.md). 
-
-To compile a different variant into a separate folder: 
-```shell
-wasm-pack build --out-dir pkg_kyber512/ -- --features "wasm kyber512" 
-```
-
-There is also a basic html demo in the [www](./www/readme.md) folder.
- 
-From the www folder run: 
-
-```shell
-npm run start
-```
 
 ---
 

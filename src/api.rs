@@ -103,10 +103,10 @@ impl Keypair {
 struct DummyRng{}
 impl CryptoRng for DummyRng{}
 impl RngCore for DummyRng{
-    fn next_u32(&mut self) -> u32 { panic!() }
-    fn next_u64(&mut self) -> u64 { panic!() }
-    fn try_fill_bytes(&mut self, _dest: &mut [u8]) -> Result<(), rand_core::Error> { panic!() }
-    fn fill_bytes(&mut self, _dest: &mut [u8]) { panic!() }
+    fn next_u32(&mut self) -> u32 { 0 }
+    fn next_u64(&mut self) -> u64 { 0 }
+    fn try_fill_bytes(&mut self, _dest: &mut [u8]) -> Result<(), rand_core::Error> { Ok(()) }
+    fn fill_bytes(&mut self, _dest: &mut [u8]) { }
 }
 
 /// Deterministically derive a keypair from a seed as specified

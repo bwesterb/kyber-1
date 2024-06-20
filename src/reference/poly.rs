@@ -91,7 +91,7 @@ pub fn poly_compress(r: &mut[u8], a: Poly)
         k += 5;
       }
     },
-    _ => panic!("KYBER_POLYCOMPRESSEDBYTES needs to be one of (128, 160)")
+    _ => { },
   }
 }
 
@@ -132,7 +132,7 @@ pub fn poly_decompress(r: &mut Poly, a: &[u8])
         }
       }
     },
-    _ => panic!("KYBER_POLYCOMPRESSEDBYTES needs to be either (128, 160)")
+    _ => { },
   }
 }
 

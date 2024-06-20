@@ -9,7 +9,7 @@
 [![Build Status](https://github.com/Argyle-Software/kyber/actions/workflows/kat.yml/badge.svg)](https://github.com/bwesterb/argyle-kyber/actions)
 [![Crates](https://img.shields.io/crates/v/safe_pqc_kyber)](https://crates.io/crates/safe_pqc_kyber)
 [![License](https://img.shields.io/crates/l/safe_pqc_kyber)](https://github.com/Argyle-Software/kyber/blob/master/LICENSE-MIT)
-[![dependency status](https://deps.rs/crate/safe_pqc_kyber/0.6.2/status.svg)](https://deps.rs/crate/safe_pqc_kyber/0.6.2)
+[![dependency status](https://deps.rs/crate/safe_pqc_kyber/0.6.3/status.svg)](https://deps.rs/crate/safe_pqc_kyber/0.6.3)
 
 **This is a conservative fork of [Argyle-Software's Kyber](https://github.com/Argyle-Software/kyber) crate.**
 

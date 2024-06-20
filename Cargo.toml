@@ -1,6 +1,6 @@
 [package]
 name = "safe_pqc_kyber"
-version = "0.6.2"
+version = "0.6.3"
 authors = ["Bas Westerbaan <bas@westerbaan.name>"]
 edition = "2018"
 license = "MIT/Apache-2.0"
